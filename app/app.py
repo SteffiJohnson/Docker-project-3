@@ -2,7 +2,8 @@
 
 from flask import Flask, render_template
 app = Flask(__name__)
-
+import redis
+r = redis.Redis(host='redis', port=6379)
 @app.route("/")
 def hello():
     return render_template('index.html')
